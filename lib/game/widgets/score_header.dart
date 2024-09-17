@@ -48,7 +48,7 @@ class ScoreHeader extends StatelessWidget {
         const SizedBox(height: 16),
         Flexible(
           flex: 3,
-          child: Container(
+          child: SizedBox(
             width: MediaQuery.of(context).size.width,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -34,34 +34,37 @@ class GameStatusSheet extends StatelessWidget {
         if (state.status != Status.draw && state.status != Status.won) {
           return const SizedBox.shrink();
         }
-        return Container(
-            height: MediaQuery.sizeOf(context).height * .4,
-            padding: const EdgeInsets.all(32),
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: theme.colorScheme.onSurface,
-              borderRadius: const BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-            ),
-            child: Column(
-              children: [
-                Flexible(
-                  flex: 2,
-                  child: Image.asset(_getImagePath(state)),
-                ),
-                Flexible(
-                  flex: 3,
-                  fit: FlexFit.tight,
-                  child: Center(
-                    child: Text(state.status.wording(state.winner),
-                        style: theme.textTheme.titleMedium?.copyWith(color: theme.colorScheme.inversePrimary)),
+        return ClipRRect(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(40),
+            topRight: Radius.circular(40),
+          ),
+          child: Container(
+              height: MediaQuery.sizeOf(context).height * .4,
+              padding: const EdgeInsets.all(32),
+              width: double.infinity,
+              decoration: BoxDecoration(color: theme.colorScheme.onSurface),
+              child: Column(
+                children: [
+                  Flexible(
+                    flex: 2,
+                    child: Image.asset(_getImagePath(state)),
                   ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: ActionButton(status: state.status),
-                ),
-              ],
-            ));
+                  Flexible(
+                    flex: 3,
+                    fit: FlexFit.tight,
+                    child: Center(
+                      child: Text(state.status.wording(state.winner),
+                          style: theme.textTheme.titleMedium?.copyWith(color: theme.colorScheme.inversePrimary)),
+                    ),
+                  ),
+                  Flexible(
+                    flex: 1,
+                    child: ActionButton(status: state.status),
+                  ),
+                ],
+              )),
+        );
       },
     );
   }

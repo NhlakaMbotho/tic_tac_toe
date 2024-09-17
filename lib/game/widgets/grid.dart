@@ -10,7 +10,10 @@ import 'package:munch_test/styling/styling.dart';
 class _MarkerBlock extends StatelessWidget {
   final MarkedPoint? point;
   final Point position;
-  const _MarkerBlock({required this.point, required this.position, super.key});
+  const _MarkerBlock({
+    required this.point,
+    required this.position,
+  });
 
   @override
   Widget build(BuildContext context) {
