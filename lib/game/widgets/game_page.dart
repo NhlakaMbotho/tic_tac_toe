@@ -12,7 +12,6 @@ class GamePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: BlocConsumer<GameBloc, GameState>(
-        listenWhen: (previous, current) => previous.status != current.status,
         listener: (context, state) {
           if (state.status == Status.won || state.status == Status.draw) {
             showModalBottomSheet(

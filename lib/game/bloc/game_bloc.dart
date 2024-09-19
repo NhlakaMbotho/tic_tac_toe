@@ -40,12 +40,15 @@ class GameBloc extends Bloc<GameEvent, GameState> {
               winner == EngineConstants.computerMarker ? currentComputerScore + 1 : currentComputerScore
         };
       }
+
       emit(state.copyWith(
-          gamesCounter: state.gamesCounter + 1,
-          positions: postUserPositions,
-          status: status.toBlocStatus(),
-          winner: winner,
-          scoreSheet: scoreSheet));
+        gamesCounter: state.gamesCounter + 1,
+        positions: postUserPositions,
+        status: status.toBlocStatus(),
+        winner: winner,
+        scoreSheet: scoreSheet,
+      ));
+
       return;
     }
 
@@ -54,6 +57,7 @@ class GameBloc extends Bloc<GameEvent, GameState> {
     (winner, status) = _algorithm.checkStatus(postUserPositions);
 
     Map<int, int>? scoreSheet = state.scoreSheet;
+
     if (status == GameStatus.won) {
       var currentPlayerScore = state.getPlayerScore ?? 0;
       var currentComputerScore = state.getComputerScore ?? 0;

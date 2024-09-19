@@ -8,7 +8,7 @@ import 'package:munch_test/engine/src/models/point.dart';
 
 class RandomAlgo extends IAlgorithm {
   final Random _random = Random();
-  RandomAlgo(super.computerValue);
+  RandomAlgo() : super(EngineConstants.computerMarker);
 
   @override
   List<MarkedPoint> processMove(List<MarkedPoint> givenPositionsInAscOrder) {
