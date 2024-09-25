@@ -2,8 +2,12 @@ import 'dart:math';
 
 import 'package:munch_test/engine/src/constants.dart';
 
+///Represents a single block on the grid
 class MarkedPoint {
+  /// 0 = 'O', 1 == 'X'
   final int value;
+
+  /// X, Y coordinate on the grid
   final Point position;
 
   MarkedPoint({required this.value, required this.position});

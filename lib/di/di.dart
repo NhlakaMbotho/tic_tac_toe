@@ -4,6 +4,7 @@ import 'package:munch_test/engine/src/random_algorithm.dart';
 
 GetIt sl = GetIt.instance;
 
+/// Injects a algorithm instance that confirms to the [IAlgorithm] interface to be consumed by the app
 class DependencyInjection {
   static void init() {
     sl.registerSingleton<IAlgorithm>(RandomAlgo(), signalsReady: true);

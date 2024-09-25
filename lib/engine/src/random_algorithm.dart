@@ -11,15 +11,15 @@ class RandomAlgo extends IAlgorithm {
   RandomAlgo() : super(EngineConstants.computerMarker);
 
   @override
-  List<MarkedPoint> processMove(List<MarkedPoint> givenPositionsInAscOrder) {
-    if (givenPositionsInAscOrder.length == EngineConstants.maxPositions) {
-      return givenPositionsInAscOrder;
+  List<MarkedPoint> processMove(List<MarkedPoint> givenPositions) {
+    if (givenPositions.length == EngineConstants.maxPositions) {
+      return givenPositions;
     }
 
-    MarkedPoint newComputerPoint = _determineNextComputerMove(givenPositionsInAscOrder);
+    MarkedPoint newComputerPoint = _determineNextComputerMove(givenPositions);
 
-    givenPositionsInAscOrder.add(newComputerPoint);
-    return givenPositionsInAscOrder;
+    givenPositions.add(newComputerPoint);
+    return givenPositions;
   }
 
   MarkedPoint _determineNextComputerMove(List<MarkedPoint> givenPositions) {

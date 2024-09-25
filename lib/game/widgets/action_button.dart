@@ -28,29 +28,26 @@ class ActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final gameBloc = context.read<GameBloc>();
-    return SizedBox(
-      width: double.infinity,
-      child: FilledButton(
-        onPressed: () {
-          switch (status) {
-            case Status.init:
-              gameBloc.add(PromptComputerMoveEvent());
-            case Status.inProgress:
-            case Status.won:
-            case Status.draw:
-              gameBloc.add(ResetEvent());
-              break;
-            default:
-          }
-        },
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(status.icon),
-            const SizedBox(width: 8),
-            Text(status.label),
-          ],
-        ),
+    return FilledButton(
+      onPressed: () {
+        switch (status) {
+          case Status.init:
+            gameBloc.add(PromptComputerMoveEvent());
+          case Status.inProgress:
+          case Status.won:
+          case Status.draw:
+            gameBloc.add(ResetEvent());
+            break;
+          default:
+        }
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(status.icon),
+          const SizedBox(width: 8),
+          Text(status.label),
+        ],
       ),
     );
   }

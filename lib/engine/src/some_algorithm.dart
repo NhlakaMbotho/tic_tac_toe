@@ -10,7 +10,7 @@ class SomeAlgorithm extends IAlgorithm {
   }
 
   @override
-  List<MarkedPoint> processMove(List<MarkedPoint> givenPositionsInAscOrder) {
+  List<MarkedPoint> processMove(List<MarkedPoint> givenPositions) {
     throw UnimplementedError();
   }
 }

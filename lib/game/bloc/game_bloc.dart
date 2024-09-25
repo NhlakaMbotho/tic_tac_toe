@@ -7,6 +7,11 @@ import 'package:munch_test/engine/src/constants.dart';
 part 'game_event.dart';
 part 'game_state.dart';
 
+/// Main objective of this bloc is to reactive to the main game events and manage the following state
+/// * User and computed populated positions
+/// * Score sheet
+/// * Total number of games played
+/// * Current status of the game
 class GameBloc extends Bloc<GameEvent, GameState> {
   final IAlgorithm _algorithm;
 

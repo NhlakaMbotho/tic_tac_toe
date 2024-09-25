@@ -28,18 +28,16 @@ class GamePage extends StatelessWidget {
             padding: const EdgeInsets.all(32),
             child: Column(
               children: [
-                Flexible(
-                  flex: 6,
+                SizedBox(
+                  height: MediaQuery.sizeOf(context).height * .4,
                   child: ScoreHeader(state: state),
                 ),
-                const SizedBox(height: 20),
-                Flexible(
-                  flex: 7,
+                SizedBox(
+                  height: MediaQuery.sizeOf(context).height * .4,
                   child: Grid(positions: state.positions),
                 ),
-                const SizedBox(height: 20),
-                Flexible(
-                  flex: 1,
+                SizedBox(
+                  height: MediaQuery.sizeOf(context).height * .1,
                   child: ActionButton(status: state.status),
                 ),
               ],

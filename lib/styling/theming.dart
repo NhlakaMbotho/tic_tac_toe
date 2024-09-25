@@ -19,15 +19,6 @@ final mainTheme = ThemeData(
     surfaceContainerLowest: _surfaceContainerLowest,
   ),
   useMaterial3: false,
-  filledButtonTheme: FilledButtonThemeData(
-    style: FilledButton.styleFrom(
-      backgroundColor: _primaryInverse,
-      textStyle: const TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8),
-      ),
-    ),
-  ),
   iconTheme: const IconThemeData(size: 24),
   fontFamily: 'Inter',
   textTheme: const TextTheme(

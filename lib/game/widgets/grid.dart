@@ -61,8 +61,8 @@ class _GridState extends State<Grid> {
             child: GridView.count(
               padding: EdgeInsets.all(10),
               crossAxisCount: 3,
-              cacheExtent: 3,
-              childAspectRatio: 1.18,
+              // cacheExtent: 3,
+              // childAspectRatio: 1.18,
               mainAxisSpacing: 10,
               crossAxisSpacing: 10,
               children: EngineConstants.maxGridPoints.map(
